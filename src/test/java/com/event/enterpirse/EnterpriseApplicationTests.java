@@ -39,4 +39,20 @@ public class EnterpriseApplicationTests {
         String lastName = person.getLastName();
         assertEquals("Freid", lastName);
     }
+
+    @Test
+    void savePerson_validationReturnEventWithFirstNameAndLastName() {
+        givenPersonDataAreAvailable();
+        whenUserCreatesNewPersonAndSaves();
+        thenCreateNewPersonRecordAndReturnIt();
+    }
+
+    private void whenUserCreatesNewPersonAndSaves() {
+        person.setFirstName("Robert");
+        person.setLastName("Freid");
+    }
+
+    private void thenCreateNewPersonRecordAndReturnIt() {
+        Person createdPerson = personService.save(person);
+    }
 }

@@ -9,4 +9,6 @@ public interface IPersonService {
      * @return the matching person, or null if no matches found.
      */
     Person fetchById(int id);
+
+    Person save(Person person);
 }

@@ -1,10 +1,25 @@
 package com.event.enterpirse.service;
 
+import com.event.enterpirse.dao.IPersonDAO;
 import com.event.enterpirse.dto.Person;
 import org.springframework.stereotype.Component;
 
 @Component
 public class PersonServiceStub implements IPersonService{
+
+    private IPersonDAO personDAO;
+
+    /**
+     * Default Constructor
+     */
+    public PersonServiceStub() {
+
+    }
+
+    public PersonServiceStub(IPersonDAO personDAO) {
+
+        this.personDAO = personDAO;
+    }
 
     @Override
     public Person fetchById(int id) {
@@ -12,5 +27,10 @@ public class PersonServiceStub implements IPersonService{
         person.setLastName("Freid");
         person.setPersonId(1);
         return person;
+    }
+
+    @Override
+    public Person save(Person person) {
+        return personDAO.save(person);
     }
 }
