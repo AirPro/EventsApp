@@ -10,5 +10,5 @@ public interface IPersonService {
      */
     Person fetchById(int id);
 
-    Person save(Person person);
+    Person save(Person person) throws Exception;
 }

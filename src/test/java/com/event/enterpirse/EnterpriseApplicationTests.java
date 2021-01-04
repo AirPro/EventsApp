@@ -3,6 +3,7 @@ package com.event.enterpirse;
 import com.event.enterpirse.dao.IPersonDAO;
 import com.event.enterpirse.dto.Person;
 import com.event.enterpirse.service.IPersonService;
+import com.event.enterpirse.service.PersonServiceStub;
 import org.junit.jupiter.api.Test;
 import org.mockito.Mockito;
 import org.springframework.beans.factory.annotation.Autowired;
@@ -14,9 +15,9 @@ import static org.junit.jupiter.api.Assertions.assertEquals;
 @SpringBootTest
 public class EnterpriseApplicationTests {
 
-    @Autowired
+    //@Autowired Removed this for future reference in another lesson
     private IPersonService personService;
-    private Person person;
+    private Person person = new Person();
 
     @MockBean
     private IPersonDAO personDAO;
@@ -27,14 +28,15 @@ public class EnterpriseApplicationTests {
     }
 
     @Test
-    void fetchEventById_ReturnsPersonById1(){
+    void fetchEventById_ReturnsPersonById1() throws Exception{
         givenPersonDataAreAvailable();
         whenSearchPersonWithId1();
         thenReturnOnePersonForId1();
     }
 
-    private void givenPersonDataAreAvailable() {
+    private void givenPersonDataAreAvailable() throws Exception{
         Mockito.when(personDAO.save(person)).thenReturn(person);
+        personService = new PersonServiceStub(personDAO);
     }
 
     private void whenSearchPersonWithId1() {
@@ -48,7 +50,7 @@ public class EnterpriseApplicationTests {
     }
 
     @Test
-    void savePerson_validationReturnEventWithFirstNameAndLastName() {
+    void savePerson_validationReturnEventWithFirstNameAndLastName() throws Exception{
         givenPersonDataAreAvailable();
         whenUserCreatesNewPersonAndSaves();
         thenCreateNewPersonRecordAndReturnIt();
@@ -59,7 +61,8 @@ public class EnterpriseApplicationTests {
         person.setLastName("Freid");
     }
 
-    private void thenCreateNewPersonRecordAndReturnIt() {
+    private void thenCreateNewPersonRecordAndReturnIt() throws Exception{
         Person createdPerson = personService.save(person);
+        assertEquals(person, createdPerson);
     }
 }

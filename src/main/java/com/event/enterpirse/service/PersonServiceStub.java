@@ -30,7 +30,7 @@ public class PersonServiceStub implements IPersonService{
     }
 
     @Override
-    public Person save(Person person) {
+    public Person save(Person person) throws Exception{
         return personDAO.save(person);
     }
 }
