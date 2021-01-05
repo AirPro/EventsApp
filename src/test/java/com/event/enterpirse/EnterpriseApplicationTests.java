@@ -11,6 +11,8 @@ import org.springframework.boot.test.context.SpringBootTest;
 import org.springframework.boot.test.mock.mockito.MockBean;
 
 import static org.junit.jupiter.api.Assertions.assertEquals;
+import static org.mockito.Mockito.atLeastOnce;
+import static org.mockito.Mockito.verify;
 
 @SpringBootTest
 public class EnterpriseApplicationTests {
@@ -64,5 +66,6 @@ public class EnterpriseApplicationTests {
     private void thenCreateNewPersonRecordAndReturnIt() throws Exception{
         Person createdPerson = personService.save(person);
         assertEquals(person, createdPerson);
+        verify(personDAO, atLeastOnce()).save(person); // verify that the mocked object is verified at least once
     }
 }
