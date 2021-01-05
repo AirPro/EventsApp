@@ -25,6 +25,11 @@ public class PersonServiceStub implements IPersonService{
         this.personDAO = personDAO;
     }
 
+    /**
+     * populate class for test driven design
+     * @param id a unique identifier for a person.
+     * @return
+     */
     @Override
     public Person fetchById(int id) {
         Person person = new Person();
