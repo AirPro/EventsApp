@@ -4,6 +4,9 @@ import lombok.Data;
 
 import java.util.Date;
 
+/**
+ * Class definitions and attribute for Photo
+ */
 public @Data
 class Photo {
 
