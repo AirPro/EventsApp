@@ -4,6 +4,9 @@ import lombok.Data;
 
 import java.util.Date;
 
+/**
+ * The Event Class with lombok configuration
+ */
 public @Data
 class Event {
     private int eventId;
