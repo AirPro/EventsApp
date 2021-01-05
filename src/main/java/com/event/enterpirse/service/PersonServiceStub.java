@@ -16,6 +16,10 @@ public class PersonServiceStub implements IPersonService{
 
     }
 
+    /**
+     * overrides default constructor if present
+     * @param personDAO
+     */
     public PersonServiceStub(IPersonDAO personDAO) {
 
         this.personDAO = personDAO;
