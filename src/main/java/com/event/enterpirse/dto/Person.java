@@ -2,6 +2,9 @@ package com.event.enterpirse.dto;
 
 import lombok.Data;
 
+/**
+ * use lombok to make Person class
+ */
 public @Data
 class Person {
     private int personId;
