@@ -40,6 +40,7 @@ public class PersonServiceStub implements IPersonService{
         return foundPerson;
     }
 
+    @Override
     public void delete(int id) throws Exception{
         personDAO.delete(id);
     }

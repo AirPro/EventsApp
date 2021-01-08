@@ -3,7 +3,9 @@ package com.event.enterpirse;
 import com.event.enterpirse.dto.Person;
 import com.event.enterpirse.service.IPersonService;
 import org.springframework.beans.factory.annotation.Autowired;
+import org.springframework.http.HttpHeaders;
 import org.springframework.http.HttpStatus;
+import org.springframework.http.MediaType;
 import org.springframework.http.ResponseEntity;
 import org.springframework.stereotype.Controller;
 import org.springframework.web.bind.annotation.*;
@@ -30,7 +32,10 @@ public class EventsApplicationController {
 
     @GetMapping("/person/id/")
     public ResponseEntity fetchPersonById(@PathVariable("id") String id) {
-        return new ResponseEntity(HttpStatus.OK);
+        Person foundPerson = personService.fetchById(Integer.parseInt(id));
+        HttpHeaders headers = new HttpHeaders();
+        headers.setContentType(MediaType.APPLICATION_JSON);
+        return new ResponseEntity(foundPerson, HttpStatus.OK);
     }
 
     @PostMapping(value="/person", consumes="application/jason", produces="application/jason")
@@ -46,6 +51,11 @@ public class EventsApplicationController {
 
     @DeleteMapping("/person.id/")
     public ResponseEntity deletePerson(@PathVariable("id") String id) {
-        return new ResponseEntity(HttpStatus.OK);
+        try {
+            personService.delete(Integer.parseInt(id));
+            return new ResponseEntity(HttpStatus.OK);
+        } catch (Exception e) {
+            return new ResponseEntity(HttpStatus.INTERNAL_SERVER_ERROR);
+        }
     }
 }

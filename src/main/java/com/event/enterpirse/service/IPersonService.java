@@ -12,6 +12,8 @@ public interface IPersonService {
      */
     Person fetchById(int id);
 
+    void delete(int id) throws Exception;
+
     Person save(Person person) throws Exception;
 
     List<Person> fetchAll();
