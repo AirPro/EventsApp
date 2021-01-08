@@ -6,7 +6,6 @@ import com.event.enterpirse.service.IPersonService;
 import com.event.enterpirse.service.PersonServiceStub;
 import org.junit.jupiter.api.Test;
 import org.mockito.Mockito;
-import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.boot.test.context.SpringBootTest;
 import org.springframework.boot.test.mock.mockito.MockBean;
 
@@ -30,10 +29,18 @@ public class EnterpriseApplicationTests {
     }
 
     @Test
-    void fetchEventById_ReturnsPersonById1() throws Exception{
+    void fetchPersonById_ReturnsPersonById1() throws Exception{
         givenPersonDataAreAvailable();
+        whenPerson01AddedIsFreid();
         whenSearchPersonWithId1();
         thenReturnOnePersonForId1();
+    }
+
+    private void whenPerson01AddedIsFreid() {
+        Person freid = new Person();
+        freid.setPersonId(01);
+        freid.setLastName("Freid");
+        Mockito.when(personDAO.fetch(01)).thenReturn(freid);
     }
 
     private void givenPersonDataAreAvailable() throws Exception{

@@ -7,6 +7,7 @@ import lombok.Data;
  */
 public @Data
 class Person {
+
     private int personId;
     String firstName;
     String lastName;

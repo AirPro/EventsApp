@@ -11,4 +11,8 @@ public interface IPersonDAO {
     Person save(Person person) throws Exception;
 
     List<Person> fetchAll();
+
+    Person fetch(int id);
+
+    void delete(int id);
 }

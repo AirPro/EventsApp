@@ -36,10 +36,12 @@ public class PersonServiceStub implements IPersonService{
      */
     @Override
     public Person fetchById(int id) {
-        Person person = new Person();
-        person.setLastName("Freid");
-        person.setPersonId(1);
-        return person;
+        Person foundPerson = personDAO.fetch(id);
+        return foundPerson;
+    }
+
+    public void delete(int id) throws Exception{
+        personDAO.delete(id);
     }
 
     @Override
