@@ -8,6 +8,8 @@ import org.springframework.http.ResponseEntity;
 import org.springframework.stereotype.Controller;
 import org.springframework.web.bind.annotation.*;
 
+import java.util.List;
+
 @Controller
 public class EventsApplicationController {
 
@@ -21,8 +23,9 @@ public class EventsApplicationController {
     }
 
     @GetMapping("/person")
-    public ResponseEntity fetchAllPersons() {
-        return new ResponseEntity(HttpStatus.OK);
+    @ResponseBody
+    public List<Person> fetchAllPersons() {
+        return personService.fetchAll();
     }
 
     @GetMapping("/person/id/")
