@@ -2,6 +2,8 @@ package com.event.enterpirse.service;
 
 import com.event.enterpirse.dto.Person;
 
+import java.util.List;
+
 public interface IPersonService {
     /**
      * Fetch a person with a given Id
@@ -11,4 +13,6 @@ public interface IPersonService {
     Person fetchById(int id);
 
     Person save(Person person) throws Exception;
+
+    List<Person> fetchAll();
 }

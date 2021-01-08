@@ -2,11 +2,15 @@ package com.event.enterpirse.service;
 
 import com.event.enterpirse.dao.IPersonDAO;
 import com.event.enterpirse.dto.Person;
-import org.springframework.stereotype.Component;
+import org.springframework.beans.factory.annotation.Autowired;
+import org.springframework.stereotype.Service;
 
-@Component
+import java.util.List;
+
+@Service
 public class PersonServiceStub implements IPersonService{
 
+    @Autowired
     private IPersonDAO personDAO;
 
     /**
@@ -41,5 +45,10 @@ public class PersonServiceStub implements IPersonService{
     @Override
     public Person save(Person person) throws Exception{
         return personDAO.save(person);
+    }
+
+    @Override
+    public List<Person> fetchAll() {
+        return personDAO.fetchAll();
     }
 }

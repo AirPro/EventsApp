@@ -16,6 +16,7 @@ public class EventsApplicationController {
 
     @RequestMapping("/")
     public String index() {
+        personService.fetchAll();
         return "start";
     }
 
