@@ -77,7 +77,7 @@ public class EnterpriseApplicationTests {
     }
 
     @Test
-    void thisTest_ShouldFail() {
+    void thisTest_WillSucceed() {
         assertEquals(4, 2 + 2);
     }
 }
