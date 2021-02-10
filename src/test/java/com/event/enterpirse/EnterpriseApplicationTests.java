@@ -75,4 +75,9 @@ public class EnterpriseApplicationTests {
         assertEquals(person, createdPerson);
         verify(personDAO, atLeastOnce()).save(person); // verify that the mocked object is verified at least once
     }
+
+    @Test
+    void thisTest_ShouldFail() {
+        assertEquals(4, 1 + 2);
+    }
 }
