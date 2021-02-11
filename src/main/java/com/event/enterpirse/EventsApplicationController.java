@@ -54,7 +54,7 @@ public class EventsApplicationController {
         Person foundPerson = personService.fetchById(Integer.parseInt(id));
         HttpHeaders headers = new HttpHeaders();
         headers.setContentType(MediaType.APPLICATION_JSON);
-        return new ResponseEntity(foundPerson, HttpStatus.OK);
+        return new ResponseEntity(foundPerson, headers, HttpStatus.OK);
     }
 
     /**
