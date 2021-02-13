@@ -5,7 +5,21 @@
     <title>My Person Application</title>
 </head>
 <body>
-I can keep track of a person and an event.
-<p th:text="${person}" />
+    I can keep track of a person and an event.
+    <p th:text="${person}" />
+
+    <form action="#" th:action="@{savePerson}" th:object="${person}" method="get"><br />
+        <label>First Name</label><input type="text" name="firstName" th:field="*{firstName}"/><br />
+        <label>Last Name</label><input type="text" name="lastName" th:field="*{lastName}"/><br />
+        <label>Address</label><input type="text" name="address" th:field="*{address}"/><br />
+        <label>Home Phone</label><input type="text" name="homePhone" th:field="*{homePhone}"/><br />
+        <label>Cell Phone</label><input type="text" name="cellPhone" th:field="*{cellPhone}"/><br />
+        <label>Business Phone</label><input type="text" name="businessPhone" th:field="*{businessPhone}"/><br />
+        <label>Personal Email</label><input type="text" name="personalEmail" th:field="*{personalEmail}"/><br />
+        <label>Business Email</label><input type="text" name="businessEmail" th:field="*{businessEmail}"/><br />
+        <label>Business Name</label><input type="text" name="businessName" th:field="*{businessName}"/><br />
+        <label>Person ID</label><input type="number" name="personId" th:field="*{personId}"/><br />
+        <button name="submit" type="submit" value="0">Submit</button>
+    </form>
 </body>
 </html>

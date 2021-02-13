@@ -40,6 +40,17 @@ public class EventsApplicationController {
         return "start";
     }
 
+    @RequestMapping("/savePerson")
+    public String savePerson(Person person) {
+        try {
+            personService.save(person);
+        } catch (Exception e) {
+            e.printStackTrace();
+            return "start";
+        }
+        return "start";
+    }
+
     /**
      * Handle returning all Person in the database
      * @return
