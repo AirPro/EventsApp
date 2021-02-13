@@ -8,6 +8,7 @@ import org.springframework.http.HttpStatus;
 import org.springframework.http.MediaType;
 import org.springframework.http.ResponseEntity;
 import org.springframework.stereotype.Controller;
+import org.springframework.ui.Model;
 import org.springframework.web.bind.annotation.*;
 import java.util.List;
 
@@ -22,8 +23,20 @@ public class EventsApplicationController {
      * @return
      */
     @RequestMapping("/")
-    public String index() {
-        personService.fetchAll();
+    public String index(Model model) {
+        //personService.fetchAll();
+        Person person = new Person();
+        person.setFirstName("George");
+        person.setLastName("Owens");
+        person.setAddress("2 Main Street, SF, CA");
+        person.setHomePhone("home phone");
+        person.setCellPhone("cell phone");
+        person.setBusinessPhone("business phone");
+        person.setPersonalEmail("personal email");
+        person.setBusinessEmail("business email");
+        person.setBusinessName("business name");
+        person.setPersonId(21);
+        model.addAttribute(person);
         return "start";
     }
 
