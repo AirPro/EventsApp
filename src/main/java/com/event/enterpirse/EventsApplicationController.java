@@ -19,7 +19,7 @@ public class EventsApplicationController {
     IPersonService personService;
 
     /**
-     * Created hardcoded entries to populate the initial html page
+     * Created hardcoded entries to populate the initial html page to be removed
      * Handle the root (/) endpoint and return a start page.
      * @return
      */
