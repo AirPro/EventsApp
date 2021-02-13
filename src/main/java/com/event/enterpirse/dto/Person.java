@@ -4,6 +4,7 @@ import lombok.Data;
 
 /**
  * use lombok to make Person class
+ * lambok allows for annotations
  */
 public @Data
 class Person {
