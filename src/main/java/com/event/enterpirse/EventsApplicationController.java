@@ -19,12 +19,12 @@ public class EventsApplicationController {
     IPersonService personService;
 
     /**
+     * Created hardcoded entries to populate the initial html page
      * Handle the root (/) endpoint and return a start page.
      * @return
      */
     @RequestMapping("/")
     public String index(Model model) {
-        //personService.fetchAll();
         Person person = new Person();
         person.setFirstName("George");
         person.setLastName("Owens");
