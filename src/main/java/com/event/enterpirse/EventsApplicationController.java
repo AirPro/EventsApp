@@ -18,10 +18,7 @@ public class EventsApplicationController {
     @Autowired
     IPersonService personService;
 
-    /**
-     * Handle the root (/) endpoint and return a start page.
-     * @return
-     */
+
     @RequestMapping("/")
     public String index(Model model) {
         Person person = new Person();
@@ -39,11 +36,7 @@ public class EventsApplicationController {
         return "start";
     }
 
-    /**
-     * Used for html page
-     * @param person
-     * @return
-     */
+
     @RequestMapping("/savePerson")
     public String savePerson(Person person) {
         try {
@@ -55,10 +48,7 @@ public class EventsApplicationController {
         return "start";
     }
 
-    /**
-     * Handle returning all Person in the database
-     * @return
-     */
+
     @GetMapping("/person")
     @ResponseBody
     public List<Person> fetchAllPersons() {
@@ -105,11 +95,7 @@ public class EventsApplicationController {
         return newPerson;
     }
 
-    /**
-     * Delete a person from the database
-     * @param id
-     * @return
-     */
+
     @DeleteMapping("/person.id/")
     public ResponseEntity deletePerson(@PathVariable("id") String id) {
         try {

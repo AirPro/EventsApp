@@ -3,22 +3,70 @@
 <head>
     <meta charset="UTF-8">
     <title>My Person Application</title>
+    <!-- Required meta tags -->
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <!-- Bootstrap CSS -->
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.0.0-beta2/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-BmbxuPwQa2lc/FVzBcNJ7UAyJxM6wuqIj61tLrc4wSX0szH/Ev+nYRRuWlolflfl" crossorigin="anonymous">
+    <script src="https://cdn.jsdelivr.net/npm/@popperjs/core@2.6.0/dist/umd/popper.min.js" integrity="sha384-KsvD1yqQ1/1+IA7gi3P0tyJcT3vR+NdBTt13hSJ2lnve8agRGXTTyNaBYmCR/Nwi" crossorigin="anonymous"></script>
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.0.0-beta2/dist/js/bootstrap.min.js" integrity="sha384-nsg8ua9HAw1y0W1btsyWgBklPnCUAFLuTMS2G72MMONqmOymq585AcH49TLBQObG" crossorigin="anonymous"></script>
+
 </head>
 <body>
 I can keep track of a person and an event. Please enter the information for a new person below:
 <p th:text="${person}" />
 
 <form action="#" th:action="@{savePerson}" th:object="${person}" method="get"><br />
-    <label>First Name</label><input type="text" name="firstName" th:field="*{firstName}"/><br />
-    <label>Last Name</label><input type="text" name="lastName" th:field="*{lastName}"/><br />
-    <label>Address</label><input type="text" name="address" th:field="*{address}"/><br />
-    <label>Home Phone</label><input type="text" name="homePhone" th:field="*{homePhone}"/><br />
-    <label>Cell Phone</label><input type="text" name="cellPhone" th:field="*{cellPhone}"/><br />
-    <label>Business Phone</label><input type="text" name="businessPhone" th:field="*{businessPhone}"/><br />
-    <label>Personal Email</label><input type="text" name="personalEmail" th:field="*{personalEmail}"/><br />
-    <label>Business Email</label><input type="text" name="businessEmail" th:field="*{businessEmail}"/><br />
-    <label>Business Name</label><input type="text" name="businessName" th:field="*{businessName}"/><br />
-    <label>Person ID</label><input type="number" name="personId" th:field="*{personId}"/><br />
+    <div class="input-group input-group-sm mb-3">
+        <span class="input-group-text" id="firstName">First Name</span>
+        <input type="text" class="form-control" aria-label="Sizing example input" aria-describedby="inputGroup-sizing-sm" name="firstName" th:field="*{firstName}"/>
+    </div>
+
+    <div class="input-group input-group-sm mb-3">
+        <span class="input-group-text" id="lastName">Last Name</span>
+        <input type="text" class="form-control" aria-label="Sizing example input" aria-describedby="inputGroup-sizing-sm" name="lastName" th:field="*{lastName}"/>
+    </div>
+
+    <div class="input-group input-group-sm mb-3">
+        <span class="input-group-text" id="address">Address</span>
+        <input type="text" class="form-control" aria-label="Sizing example input" aria-describedby="inputGroup-sizing-sm" name="address" th:field="*{address}"/>
+    </div>
+
+    <div class="input-group input-group-sm mb-3">
+        <span class="input-group-text" id="homePhone">Home Phone</span>
+        <input type="text" class="form-control" aria-label="Sizing example input" aria-describedby="inputGroup-sizing-sm" name="homePhone" th:field="*{homePhone}"/>
+    </div>
+
+    <div class="input-group input-group-sm mb-3">
+        <span class="input-group-text" id="cellPhone">Cell Phone Number</span>
+        <input type="text" class="form-control" aria-label="Sizing example input" aria-describedby="inputGroup-sizing-sm" name="cellPhone" th:field="*{cellPhone}"/>
+    </div>
+
+    <div class="input-group input-group-sm mb-3">
+        <span class="input-group-text" id="businessPhone">Business Phone Number</span>
+        <input type="text" class="form-control" aria-label="Sizing example input" aria-describedby="inputGroup-sizing-sm" name="businessPhone" th:field="*{businessPhone}"/>
+    </div>
+
+    <div class="input-group input-group-sm mb-3">
+        <span class="input-group-text" id="personalEmail">Personal Email</span>
+        <input type="text" class="form-control" aria-label="Sizing example input" aria-describedby="inputGroup-sizing-sm" name="personalEmail" th:field="*{personalEmail}"/>
+    </div>
+
+    <div class="input-group input-group-sm mb-3">
+        <span class="input-group-text" id="businessEmail">Business Email</span>
+        <input type="text" class="form-control" aria-label="Sizing example input" aria-describedby="inputGroup-sizing-sm" name="businessEmail" th:field="*{businessEmail}"/>
+    </div>
+
+    <div class="input-group input-group-sm mb-3">
+        <span class="input-group-text" id="businessName">Business Name</span>
+        <input type="text" class="form-control" aria-label="Sizing example input" aria-describedby="inputGroup-sizing-sm" name="businessName" th:field="*{businessName}"/>
+    </div>
+
+    <div class="input-group input-group-sm mb-3">
+        <span class="input-group-text" id="personId">Person ID</span>
+        <input type="text" class="form-control" aria-label="Sizing example input" aria-describedby="inputGroup-sizing-sm" name="personId" th:field="*{personId}"/>
+    </div>
+
     <button name="submit" type="submit" value="0">Submit</button>
 </form>
 </body>
