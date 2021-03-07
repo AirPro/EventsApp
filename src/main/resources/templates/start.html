@@ -13,60 +13,71 @@
 
 </head>
 <body>
-I can keep track of a person and an event. Please enter the information for a new person below:
-<p th:text="${person}" />
 
-<form action="#" th:action="@{savePerson}" th:object="${person}" method="get"><br />
-    <div class="input-group input-group-sm mb-3">
-        <span class="input-group-text" id="firstName">First Name</span>
-        <input type="text" class="form-control" aria-label="Sizing example input" aria-describedby="inputGroup-sizing-sm" name="firstName" th:field="*{firstName}"/>
-    </div>
+    <nav class="navbar navbar-light bg-light">
+        <div class="container-fluid">
+            <a class="navbar-brand">Person and Event Management Application</a>
+            <form class="d-flex" action="#" th:action="@{/person}" method="get">
+                <input class="form-control me-2" type="search" placeholder="Search" aria-label="Search" name="searchTerm" id="searchTerm">
+                <button class="btn btn-outline-success" type="submit">Search</button>
+            </form>
+        </div>
+    </nav>
 
-    <div class="input-group input-group-sm mb-3">
-        <span class="input-group-text" id="lastName">Last Name</span>
-        <input type="text" class="form-control" aria-label="Sizing example input" aria-describedby="inputGroup-sizing-sm" name="lastName" th:field="*{lastName}"/>
-    </div>
+    I can keep track of a person and an event.
+    <p th:text="${person}" />
 
-    <div class="input-group input-group-sm mb-3">
-        <span class="input-group-text" id="address">Address</span>
-        <input type="text" class="form-control" aria-label="Sizing example input" aria-describedby="inputGroup-sizing-sm" name="address" th:field="*{address}"/>
-    </div>
+    <form action="#" th:action="@{savePerson}" th:object="${person}" method="get"><br />
+        <div class="input-group input-group-sm mb-3">
+            <span class="input-group-text" id="firstName">First Name</span>
+            <input type="text" class="form-control" aria-label="Sizing example input" aria-describedby="inputGroup-sizing-sm" name="firstName" th:field="*{firstName}"/>
+        </div>
 
-    <div class="input-group input-group-sm mb-3">
-        <span class="input-group-text" id="homePhone">Home Phone</span>
-        <input type="text" class="form-control" aria-label="Sizing example input" aria-describedby="inputGroup-sizing-sm" name="homePhone" th:field="*{homePhone}"/>
-    </div>
+        <div class="input-group input-group-sm mb-3">
+            <span class="input-group-text" id="lastName">Last Name</span>
+            <input type="text" class="form-control" aria-label="Sizing example input" aria-describedby="inputGroup-sizing-sm" name="lastName" th:field="*{lastName}"/>
+        </div>
 
-    <div class="input-group input-group-sm mb-3">
-        <span class="input-group-text" id="cellPhone">Cell Phone Number</span>
-        <input type="text" class="form-control" aria-label="Sizing example input" aria-describedby="inputGroup-sizing-sm" name="cellPhone" th:field="*{cellPhone}"/>
-    </div>
+        <div class="input-group input-group-sm mb-3">
+            <span class="input-group-text" id="address">Address</span>
+            <input type="text" class="form-control" aria-label="Sizing example input" aria-describedby="inputGroup-sizing-sm" name="address" th:field="*{address}"/>
+        </div>
 
-    <div class="input-group input-group-sm mb-3">
-        <span class="input-group-text" id="businessPhone">Business Phone Number</span>
-        <input type="text" class="form-control" aria-label="Sizing example input" aria-describedby="inputGroup-sizing-sm" name="businessPhone" th:field="*{businessPhone}"/>
-    </div>
+        <div class="input-group input-group-sm mb-3">
+            <span class="input-group-text" id="homePhone">Home Phone</span>
+            <input type="text" class="form-control" aria-label="Sizing example input" aria-describedby="inputGroup-sizing-sm" name="homePhone" th:field="*{homePhone}"/>
+        </div>
 
-    <div class="input-group input-group-sm mb-3">
-        <span class="input-group-text" id="personalEmail">Personal Email</span>
-        <input type="text" class="form-control" aria-label="Sizing example input" aria-describedby="inputGroup-sizing-sm" name="personalEmail" th:field="*{personalEmail}"/>
-    </div>
+        <div class="input-group input-group-sm mb-3">
+            <span class="input-group-text" id="cellPhone">Cell Phone Number</span>
+            <input type="text" class="form-control" aria-label="Sizing example input" aria-describedby="inputGroup-sizing-sm" name="cellPhone" th:field="*{cellPhone}"/>
+        </div>
 
-    <div class="input-group input-group-sm mb-3">
-        <span class="input-group-text" id="businessEmail">Business Email</span>
-        <input type="text" class="form-control" aria-label="Sizing example input" aria-describedby="inputGroup-sizing-sm" name="businessEmail" th:field="*{businessEmail}"/>
-    </div>
+        <div class="input-group input-group-sm mb-3">
+            <span class="input-group-text" id="businessPhone">Business Phone Number</span>
+            <input type="text" class="form-control" aria-label="Sizing example input" aria-describedby="inputGroup-sizing-sm" name="businessPhone" th:field="*{businessPhone}"/>
+        </div>
 
-    <div class="input-group input-group-sm mb-3">
-        <span class="input-group-text" id="businessName">Business Name</span>
-        <input type="text" class="form-control" aria-label="Sizing example input" aria-describedby="inputGroup-sizing-sm" name="businessName" th:field="*{businessName}"/>
-    </div>
+        <div class="input-group input-group-sm mb-3">
+            <span class="input-group-text" id="personalEmail">Personal Email</span>
+            <input type="text" class="form-control" aria-label="Sizing example input" aria-describedby="inputGroup-sizing-sm" name="personalEmail" th:field="*{personalEmail}"/>
+        </div>
 
-    <div class="input-group input-group-sm mb-3">
-        <span class="input-group-text" id="personId">Person ID</span>
-        <input type="text" class="form-control" aria-label="Sizing example input" aria-describedby="inputGroup-sizing-sm" name="personId" th:field="*{personId}"/>
-    </div>
+        <div class="input-group input-group-sm mb-3">
+            <span class="input-group-text" id="businessEmail">Business Email</span>
+            <input type="text" class="form-control" aria-label="Sizing example input" aria-describedby="inputGroup-sizing-sm" name="businessEmail" th:field="*{businessEmail}"/>
+        </div>
 
-    <button name="submit" type="submit" value="0">Submit</button>
-</form>
+        <div class="input-group input-group-sm mb-3">
+            <span class="input-group-text" id="businessName">Business Name</span>
+            <input type="text" class="form-control" aria-label="Sizing example input" aria-describedby="inputGroup-sizing-sm" name="businessName" th:field="*{businessName}"/>
+        </div>
+
+        <div class="input-group input-group-sm mb-3">
+            <span class="input-group-text" id="personId">Person ID</span>
+            <input type="text" class="form-control" aria-label="Sizing example input" aria-describedby="inputGroup-sizing-sm" name="personId" th:field="*{personId}"/>
+        </div>
+
+        <button name="submit" type="submit" value="0">Submit</button>
+    </form>
 </body>
