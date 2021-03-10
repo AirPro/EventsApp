@@ -49,11 +49,32 @@ public class EventsApplicationController {
     }
 
 
+    /**
+     *
+     * @return
+     */
     @GetMapping("/person")
     @ResponseBody
     public List<Person> fetchAllPersons() {
         return personService.fetchAll();
     }
+
+    @RequestMapping("/sustainability")
+    public String sustainability() {
+        return "sustainability";
+    }
+
+    @RequestMapping("/eventPage")
+    public String eventPage() {
+        return "eventPage";
+    }
+
+    @RequestMapping("/photoPage")
+    public String photoPage() {
+        return "photoPage";
+    }
+
+
 
     /**
      * Fetch a person with the given ID.

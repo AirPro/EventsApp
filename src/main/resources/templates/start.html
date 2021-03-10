@@ -14,15 +14,9 @@
 </head>
 <body>
 
-    <nav class="navbar navbar-light bg-light">
-        <div class="container-fluid">
-            <a class="navbar-brand">Person and Event Management Application</a>
-            <form class="d-flex" action="#" th:action="@{/person}" method="get">
-                <input class="form-control me-2" type="search" placeholder="Search" aria-label="Search" name="searchTerm" id="searchTerm">
-                <button class="btn btn-outline-success" type="submit">Search</button>
-            </form>
-        </div>
-    </nav>
+    <div th:replace="fragments/topnav :: navbar">
+
+    </div>
 
     I can keep track of a person and an event.
     <p th:text="${person}" />
@@ -81,3 +75,4 @@
         <button name="submit" type="submit" value="0">Submit</button>
     </form>
 </body>
+</html>
