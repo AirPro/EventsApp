@@ -1,7 +1,9 @@
 package com.event.enterpirse.service;
 
+import com.event.enterpirse.dto.Event;
 import com.event.enterpirse.dto.Person;
 
+import java.io.IOException;
 import java.util.List;
 
 public interface IPersonService {
@@ -17,4 +19,6 @@ public interface IPersonService {
     Person save(Person person) throws Exception;
 
     List<Person> fetchAll();
+
+    List<Event> fetchEvents(String combinedName) throws IOException;
 }

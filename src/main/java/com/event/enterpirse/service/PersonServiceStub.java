@@ -1,10 +1,13 @@
 package com.event.enterpirse.service;
 
+import com.event.enterpirse.dao.IEventDAO;
 import com.event.enterpirse.dao.IPersonDAO;
+import com.event.enterpirse.dto.Event;
 import com.event.enterpirse.dto.Person;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
 
+import java.io.IOException;
 import java.util.List;
 
 @Service
@@ -12,6 +15,9 @@ public class PersonServiceStub implements IPersonService{
 
     @Autowired
     private IPersonDAO personDAO;
+
+    @Autowired
+    private IEventDAO eventDAO;
 
     /**
      * Default Constructor
@@ -53,5 +59,10 @@ public class PersonServiceStub implements IPersonService{
     @Override
     public List<Person> fetchAll() {
         return personDAO.fetchAll();
+    }
+
+    @Override
+    public List<Event> fetchEvents(String combinedName) throws IOException {
+        return eventDAO.fetchEvents(combinedName);
     }
 }
